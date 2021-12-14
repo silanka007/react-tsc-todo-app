@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "./components/Button";
 import TodoList from "./components/TodoList";
 import TodoView from "./components/TodoView";
-import { iTodo, iTodos } from "./types";
+import { iTodo, iTodos } from "./react-app-env";
 
 const todoInitial: iTodos = [
   {
@@ -29,10 +29,10 @@ function App() {
   };
 
   const handleDelete = (id: number) => {
-    const newTodos = todos.filter(todo => todo.id !== id);
-    setTodos(newTodos)
-    setTodo(newTodos[0])
-  }
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+    setTodo(newTodos[0]);
+  };
 
   return (
     <div style={styles.container}>

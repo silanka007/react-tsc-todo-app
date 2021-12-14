@@ -1,5 +1,5 @@
 import React from "react";
-import { iTodo, iTodos } from "../types";
+import { iTodo, iTodos } from "../react-app-env";
 
 type TodoListProps = {
   todos: iTodos;

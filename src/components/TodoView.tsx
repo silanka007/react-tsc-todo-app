@@ -1,5 +1,5 @@
 import React from "react";
-import { iTodo } from "../types";
+import { iTodo } from "../react-app-env";
 import Button from "./Button";
 
 type TodoViewProps = {
