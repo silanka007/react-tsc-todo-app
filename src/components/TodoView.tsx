@@ -4,7 +4,7 @@ import Button from "./Button";
 
 type TodoViewProps = {
   todo: iTodo;
-  handleDelete: (id: number) => void;
+  handleDelete: (todo: iTodo) => void;
 };
 
 function TodoView({ todo, handleDelete }: TodoViewProps) {
@@ -19,7 +19,7 @@ function TodoView({ todo, handleDelete }: TodoViewProps) {
         <div style={styles.buttons}>
           <Button
             title="Delete"
-            handler={() => handleDelete(todo.id)}
+            handler={() => handleDelete(todo)}
             style={{ background: "red", width: "100px", marginRight: 20 }}
           />
           {todo.status !== "completed" && (

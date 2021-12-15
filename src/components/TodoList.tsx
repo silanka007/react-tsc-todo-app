@@ -1,15 +1,29 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import { iTodo, iTodos } from "../react-app-env";
+import Button from "./Button";
 
 type TodoListProps = {
   todos: iTodos;
   selectedId: number;
+  setShowAddForm: React.Dispatch<SetStateAction<boolean>>;
   handleSelectTodo: (todo: iTodo) => void;
 };
 
-function TodoList({ todos, selectedId, handleSelectTodo }: TodoListProps) {
+function TodoList({
+  todos,
+  selectedId,
+  handleSelectTodo,
+  setShowAddForm,
+}: TodoListProps) {
   return (
     <div style={styles.container}>
+      <div>
+        <Button
+          title="Add New"
+          handler={() => setShowAddForm(true)}
+          style={{ margin: 20 }}
+        />
+      </div>
       <div style={styles.todoList}>
         {todos &&
           todos.length > 0 &&

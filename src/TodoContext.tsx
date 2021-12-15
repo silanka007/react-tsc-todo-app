@@ -7,7 +7,7 @@ const todoInitial: iTodos = [
     id: 1,
     title: "testing",
     description: "testing functionality",
-    status: "completed",
+    status: "pending",
   },
   {
     id: 2,
