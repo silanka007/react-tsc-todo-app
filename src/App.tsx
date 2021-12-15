@@ -1,37 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Button from "./components/Button";
 import TodoList from "./components/TodoList";
 import TodoView from "./components/TodoView";
-import { iTodo, iTodos } from "./react-app-env";
-
-const todoInitial: iTodos = [
-  {
-    id: 1,
-    title: "testing",
-    description: "testing functionality",
-    status: "completed",
-  },
-  {
-    id: 2,
-    title: "Implement todoview component",
-    description:
-      "implementation of todo view component. this show a more elaborate view of todo items individually",
-    status: "completed",
-  },
-];
+import { iTodo } from "./react-app-env";
+import { todoContext } from "./TodoContext";
 
 function App() {
-  const [todos, setTodos] = useState<iTodos | []>(todoInitial);
-  const [todo, setTodo] = useState<iTodo>(todos[0]);
+  const { todo, todos } = useContext(todoContext);
 
   const handleSelectTodo = (todo: iTodo) => {
-    setTodo(todo);
+    // setTodo(todo);
   };
 
   const handleDelete = (id: number) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
-    setTodo(newTodos[0]);
+    // setTodos(newTodos);
+    // setTodo(newTodos[0]);
   };
 
   return (

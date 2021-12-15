@@ -22,11 +22,13 @@ function TodoView({ todo, handleDelete }: TodoViewProps) {
             handler={() => handleDelete(todo.id)}
             style={{ background: "red", width: "100px", marginRight: 20 }}
           />
-          <Button
-            title="Mark Completed"
-            handler={() => {}}
-            style={{ background: "green", width: "150px" }}
-          />
+          {todo.status !== "completed" && (
+            <Button
+              title="Mark Completed"
+              handler={() => {}}
+              style={{ background: "green", width: "150px" }}
+            />
+          )}
         </div>
       </div>
     </div>
