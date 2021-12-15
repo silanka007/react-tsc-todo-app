@@ -19,7 +19,7 @@ type iTodoActionNoPayload = {
 };
 
 type iTodoActionWithPayload = {
-  type: "ADD_TODO" | "DELETE_TODO" | "SELECT_TODO";
+  type: "ADD_TODO" | "DELETE_TODO" | "SELECT_TODO" | "MARK_COMPLETED";
   payload: iTodo;
 };
 

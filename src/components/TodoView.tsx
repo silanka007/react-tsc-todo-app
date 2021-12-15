@@ -5,9 +5,10 @@ import Button from "./Button";
 type TodoViewProps = {
   todo: iTodo;
   handleDelete: (todo: iTodo) => void;
+  markCompleted: (todo: iTodo) => void;
 };
 
-function TodoView({ todo, handleDelete }: TodoViewProps) {
+function TodoView({ todo, handleDelete, markCompleted }: TodoViewProps) {
   return (
     <div style={styles.container}>
       <div style={styles.todoView}>
@@ -25,7 +26,7 @@ function TodoView({ todo, handleDelete }: TodoViewProps) {
           {todo.status !== "completed" && (
             <Button
               title="Mark Completed"
-              handler={() => {}}
+              handler={() => markCompleted(todo)}
               style={{ background: "green", width: "150px" }}
             />
           )}

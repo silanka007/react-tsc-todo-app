@@ -27,11 +27,18 @@ function App() {
     });
   };
 
+  const markCompleted = (todo: iTodo) => {
+    dispatch({
+      type: "MARK_COMPLETED",
+      payload: todo,
+    });
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.todoSec}>
         {showAddForm ? (
-          <div style={{...styles.noTodos, paddingTop: 0}}>
+          <div style={{ ...styles.noTodos, paddingTop: 0 }}>
             <div style={styles.newTodo}>
               <TodoNew setShowAddForm={setShowAddForm} />
             </div>
@@ -44,7 +51,11 @@ function App() {
               handleSelectTodo={handleSelectTodo}
               setShowAddForm={setShowAddForm}
             />
-            <TodoView todo={todo} handleDelete={handleDelete} />
+            <TodoView
+              todo={todo}
+              handleDelete={handleDelete}
+              markCompleted={markCompleted}
+            />
           </>
         ) : (
           <div style={styles.noTodos}>
@@ -92,6 +103,6 @@ const styles = {
   },
   newTodo: {
     width: "50%",
-    height: "100%"
+    height: "100%",
   },
 };
